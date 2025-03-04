@@ -21,6 +21,12 @@ public class Designation {
     @Column(name = "GRADE")
     private String grade;
 
+    @Column(name = "CODE")
+    private String code;
+
+
+
+
     public String getCode() {
         return code;
     }
@@ -29,8 +35,7 @@ public class Designation {
         this.code = code;
     }
 
-    @Column(name = "CODE")
-    private String code;
+
 
     public long getId() {
         return id;

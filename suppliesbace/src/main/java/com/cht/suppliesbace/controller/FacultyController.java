@@ -19,6 +19,7 @@ public class FacultyController {
     @Autowired
     private FacultyService facultyService;
 
+    //get all
     @GetMapping
     public APIResponseModel<List<Faculty>> getAllFaculties(){
         List<Faculty> facultyList = facultyService.getAllFaculties();
@@ -33,12 +34,14 @@ public class FacultyController {
 
     }
 
+    //get by id
     @GetMapping("/{id}")
     public Faculty getFacultyById(@PathVariable Long id){
         return facultyService.getFacultyById(id);
     }
 
 
+    //save
     @PostMapping
     public APIResponseModel<Faculty> createFaculty(@RequestBody Faculty faculty){
 
@@ -52,6 +55,7 @@ public class FacultyController {
         return response;
     }
 
+    //update
     @PutMapping("/{id}")
     public APIResponseModel<Faculty> updateFaculty(@PathVariable Long id, @RequestBody Faculty facultyDetails){
         Faculty savedFaculty =facultyService.updateFaculty(id,facultyDetails);
@@ -68,7 +72,7 @@ public class FacultyController {
 
 
 
-
+    //delete
     @DeleteMapping("/{id}")
     public  APIResponseModel<String> deleteFaculty(@PathVariable Long id){
         facultyService.deleteFaculty(id);

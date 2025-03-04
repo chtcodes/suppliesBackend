@@ -2,8 +2,9 @@ package com.cht.suppliesbace.model;
 
 import jakarta.persistence.*;
 
-@Entity
+import java.util.List;
 
+@Entity
 @Table(name = "FACULTY")
 public class Faculty {
 
@@ -12,12 +13,19 @@ public class Faculty {
     @Column(name = "ID")
     private long id;
 
-
     @Column(name = "FACULTY_NAME")
     private String facultyName;
 
     @Column(name = "CODE")
     private String code;
+
+    @OneToMany(mappedBy = "faculty")
+    private List<Department> departments;
+
+
+
+    public Faculty() {
+    }
 
     public long getId() {
         return id;
