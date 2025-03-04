@@ -21,6 +21,17 @@ public class Designation {
     @Column(name = "GRADE")
     private String grade;
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    @Column(name = "CODE")
+    private String code;
+
     public long getId() {
         return id;
     }
